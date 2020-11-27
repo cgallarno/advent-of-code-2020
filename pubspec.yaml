@@ -1,0 +1,7 @@
+name: aoc2020
+version: 0.0.1
+description: >-
+  Advent of code 2020 Submissions
+dependencies:
+dev_dependencies:
+  test: ^1.15.7
