@@ -1,27 +1,20 @@
-int findEntryTotal(List<int> entries, {bool useThreeEntries = false}){
-  if(useThreeEntries){
-    for(var entry in entries){
-      for(var entryTwo in entries){
-        int value = entry + entryTwo;
-        if(value >= 2020){
-          continue;
-        }
+int findEntryTotal(List<int> entries, {bool useThreeEntries = false}) {
+  for (var entry in entries) {
+    for (var entryTwo in entries) {
+      if (useThreeEntries) {
+        int matchingValue = entries.firstWhere(
+            (thirdEntry) => entry + entryTwo + thirdEntry == 2020,
+            orElse: () {});
 
-        for(var entryThree in entries){
-          if(value + entryThree == 2020){
-            return entry * entryTwo * entryThree;
-          }
+        if (matchingValue != null) {
+          return matchingValue * entry * entryTwo;
         }
-      }
-    }
-  }else{
-    for(var entry in entries){
-      int matchingValue = entries.firstWhere((otherEntry) => entry + otherEntry == 2020, orElse: (){});
-      if(matchingValue != null){
-        return matchingValue * entry;
+      } else {
+        if (entry + entryTwo == 2020) {
+          return entry * entryTwo;
+        }
       }
     }
   }
-
   return 0;
 }
