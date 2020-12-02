@@ -3,10 +3,10 @@
 
 ## Daily setup
 *Download the input data*
-`./aocdl --output data/day01.txt`
+`./aocdl --output data/day02.txt`
 
 *Create dart files*
-`touch lib/day01.dart test/day01_test.dart`
+`touch lib/day02.dart test/day02_test.dart`
 
 
 ##### _Write Code_
